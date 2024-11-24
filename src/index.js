@@ -19,12 +19,16 @@
         
         
         function processWeatherData(data) {
+            if (!data.currentConditions) {
+                throw new Error('Missing currentConditions data');
+            }
             return {
-                temperature: data.currentConditions.temp,
-                condition: data.currentConditions.conditions,
-                icon: data.currentConditions.icon,
+                temperature: data.currentConditions.temp || 'N/A',
+                condition: data.currentConditions.conditions || 'Unknown',
+                icon: data.currentConditions.icon || 'default-icon.png', // Ícone padrão, se necessário
             };
         }
+        
         
 
 
