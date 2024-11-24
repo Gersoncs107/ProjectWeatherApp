@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <form id="weather-form">
+        <label for="location">Enter Location:</label>
+        <input type="text" id="location" name="location" placeholder="City, Country" required>
+        <div>
+            <label>
+                <input type="radio" name="unit" value="metric" checked>
+                Celsius
+            </label>
+            <label>
+                <input type="radio" name="unit" value="imperial">
+                Fahrenheit
+            </label>
+        </div>
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="loading" class="loading" style="display: none;">Loading...</div>
+    <div id="weather-container">
+        <p>Weather information will be displayed here.</p>
+    </div>
+</body>
+</html>
