@@ -5,12 +5,18 @@
 
         async function fetchWeatherData(location) {
             const apiKey = 'JDZWL2ANLHKLMVEPP724KJ4PQ';
-            const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${apiKey}`;;
+            const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${apiKey}`;
+            
             const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch weather data: ${response.statusText}`);
+            }
+            
             const data = await response.json();
             console.log(data);
-            return data
+            return data;
         }
+        
         
         function processWeatherData(data) {
             return {
