@@ -6,7 +6,8 @@ const weatherContainer = document.getElementById('weather-container');
 // Função para buscar os dados da API
 async function fetchWeatherData(location, unit) {
     const apiKey = 'JDZWL2ANLHKLMVEPP724KJ4PQ'; // Substitua pela sua chave, se necessário
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&key=${apiKey}`;
+    const unitGroup = unit === 'metric' ? 'metric' : 'us'; // Adaptação correta para a API
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unitGroup}&key=${apiKey}`;
     
     const response = await fetch(url);
     if (!response.ok) {
