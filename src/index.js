@@ -37,8 +37,14 @@
             loadingIndicator.style.display = 'block';
             weatherContainer.innerHTML = '';
         
-            const location = document.getElementById('location').value;
+            const location = document.getElementById('location').value.trim();
             const unit = form.unit.value;
+        
+            if (!location) {
+                loadingIndicator.style.display = 'none';
+                weatherContainer.innerHTML = '<p>Please enter a valid location.</p>';
+                return;
+            }
         
             try {
                 const data = await fetchWeatherData(location);
@@ -53,9 +59,10 @@
                 `;
             } catch (error) {
                 loadingIndicator.style.display = 'none';
-                weatherContainer.innerHTML = '<p>Error fetching weather data. Please try again.</p>';
+                weatherContainer.innerHTML = `<p>Error: ${error.message}</p>`;
                 console.error('Error:', error);
             }
         });
+        
         
         
