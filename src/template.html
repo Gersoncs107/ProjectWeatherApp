@@ -3,28 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Weather Forecast</h1>
     <form id="weather-form">
-        <label for="location">Enter Location:</label>
-        <input type="text" id="location" name="location" placeholder="City, Country" required>
-        <div>
-            <label>
-                <input type="radio" name="unit" value="metric" checked>
-                Celsius
-            </label>
-            <label>
-                <input type="radio" name="unit" value="imperial">
-                Fahrenheit
-            </label>
-        </div>
+        <input type="text" id="location" placeholder="Enter location..." required>
+        <select name="unit" id="unit">
+            <option value="metric">Celsius</option>
+            <option value="us">Fahrenheit</option>
+        </select>
         <button type="submit">Get Weather</button>
+        <p id="loading">Loading...</p>
     </form>
-    <div id="loading" class="loading" style="display: none;">Loading...</div>
-    <div id="weather-container">
-        <p>Weather information will be displayed here.</p>
-    </div>
+    <div id="weather-container"></div>
 </body>
 </html>
