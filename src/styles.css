@@ -8,59 +8,72 @@ body, h1, h2, p, form, input, button {
 /* Estilo geral */
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #74b9ff, #a29bfe);
-  color: #fff;
+  background: linear-gradient(135deg, #6c5ce7, #00cec9);
+  color: #ffffff;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 /* Cabeçalho */
 h1 {
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 2.8rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Formulário */
 form {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
+  background: #ffffff;
+  color: #2d3436;
+  border-radius: 15px;
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  width: 300px;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Inputs e botões */
 form input[type="text"], form select, form button {
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
+  padding: 12px 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #dcdde1;
   outline: none;
+  transition: all 0.3s ease;
 }
 
 form input[type="text"], form select {
-  background: rgba(255, 255, 255, 0.8);
-  color: #333;
+  background: #f5f6fa;
+  color: #2d3436;
+}
+
+form input[type="text"]:focus, form select:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
 }
 
 form button {
-  background: #0984e3;
-  color: #fff;
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: #ffffff;
   font-weight: bold;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 form button:hover {
-  background: #74b9ff;
+  background: linear-gradient(135deg, #6c5ce7, #00cec9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Indicador de carregamento */
@@ -68,44 +81,49 @@ form button:hover {
   display: none;
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 10px;
+  color: #d63031;
 }
 
 /* Contêiner do clima */
 #weather-container {
   margin-top: 20px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
+  background: #ffffff;
+  color: #2d3436;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
 }
 
 #weather-container h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 #weather-container p {
-  font-size: 1rem;
-  margin: 5px 0;
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
 #weather-container img {
-  margin-top: 10px;
-  width: 80px;
-  height: 80px;
+  margin-top: 15px;
+  width: 100px;
+  height: 100px;
 }
 
 /* Estilo Responsivo */
 @media (max-width: 600px) {
-  form, #weather-container {
-      width: 90%;
+  body {
+      padding: 10px;
   }
 
   h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
+  }
+
+  form, #weather-container {
+      width: 100%;
   }
 }
