@@ -1,3 +1,4 @@
+import './styles.css'
 // Seleção de elementos do DOM
 const form = document.getElementById('weather-form');
 const loadingIndicator = document.getElementById('loading');
