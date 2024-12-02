@@ -20,6 +20,21 @@ async function fetchWeatherData(location, unit) {
     return data;
 }
 
+async function fetchGif(condition) {
+    const apiKey = 'SUA_API_KEY'; // Substitua pela sua chave da Giphy API
+    const query = condition.split(' ')[0]; // Usa a primeira palavra da condição como termo de busca
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=1`;
+
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch GIF: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.data.length > 0 ? data.data[0].images.original.url : '';
+}
+
+
 // Função para processar os dados recebidos
 function processWeatherData(data) {
     if (!data.currentConditions) {
