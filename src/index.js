@@ -86,6 +86,7 @@ form.addEventListener('submit', async (event) => {
         // Busca e processa os dados do clima
         const data = await fetchWeatherData(location, unit);
         const weather = processWeatherData(data);
+        const gifUrl = await fetchGif(weather.condition);
 
         // Exibe os dados na página
         loadingIndicator.style.display = 'none';
@@ -93,9 +94,11 @@ form.addEventListener('submit', async (event) => {
             <h2>Weather Data</h2>
             <p>Temperature: ${weather.temperature}° ${unit === 'metric' ? 'Celsius' : 'Fahrenheit'}</p>
             <p>Condition: ${weather.condition}</p>
-            <img src="${weather.icon}" alt="Weather Icon">
+            <img src="${gifUrl}" alt="Weather GIF">
         `;
         updateTheme(weather.condition)
+
+        
     } catch (error) {
         loadingIndicator.style.display = 'none';
         weatherContainer.innerHTML = '<p>Error fetching weather data. Please try again.</p>';
