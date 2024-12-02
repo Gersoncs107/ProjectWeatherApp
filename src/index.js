@@ -42,6 +42,25 @@ form.addEventListener('submit', async (event) => {
     const location = document.getElementById('location').value.trim();
     const unit = form.unit.value; // "metric" ou "us"
 
+    function updateTheme(condition) {
+        const body = document.body;
+    
+        // Remove todas as classes de tema existentes
+        body.classList.remove('theme-sunny', 'theme-rainy', 'theme-cloudy', 'theme-default');
+    
+        // Adiciona uma classe baseada na condição
+        if (condition.includes('Rain')) {
+            body.classList.add('theme-rainy');
+        } else if (condition.includes('Cloud')) {
+            body.classList.add('theme-cloudy');
+        } else if (condition.includes('Clear') || condition.includes('Sunny')) {
+            body.classList.add('theme-sunny');
+        } else {
+            body.classList.add('theme-default');
+        }
+    }
+    
+
     if (!location) {
         loadingIndicator.style.display = 'none';
         weatherContainer.innerHTML = '<p>Please enter a valid location.</p>';
@@ -61,9 +80,12 @@ form.addEventListener('submit', async (event) => {
             <p>Condition: ${weather.condition}</p>
             <img src="${weather.icon}" alt="Weather Icon">
         `;
+        updateTheme(weather.condition)
     } catch (error) {
         loadingIndicator.style.display = 'none';
         weatherContainer.innerHTML = '<p>Error fetching weather data. Please try again.</p>';
         console.error('Error:', error);
     }
+
+    
 });

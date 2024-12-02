@@ -8,7 +8,7 @@ body, h1, p, form, input, button {
 /* Estilo geral */
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #d3d3d3, #5490c0); /* Gradiente cinza e azul */
+  background: linear-gradient(135deg, #d3d3d3, #54c078); /* Gradiente cinza e azul */
   color: #ffffff;
   min-height: 100vh;
   display: flex;
@@ -128,4 +128,24 @@ form button:hover {
   form, #weather-container {
       width: 100%;
   }
+}
+/* Temas para o body */
+body.theme-sunny {
+  background: linear-gradient(135deg, #FFD700, #FFA500); /* Tons quentes */
+  color: #333;
+}
+
+body.theme-rainy {
+  background: linear-gradient(135deg, #5f9ea0, #4682b4); /* Tons frios */
+  color: #fff;
+}
+
+body.theme-cloudy {
+  background: linear-gradient(135deg, #d3d3d3, #a9a9a9); /* Cinza */
+  color: #333;
+}
+
+body.theme-default {
+  background: linear-gradient(135deg, #6c5ce7, #00cec9); /* Padrão */
+  color: #fff;
 }
