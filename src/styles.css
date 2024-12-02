@@ -8,7 +8,7 @@ body, h1, p, form, input, button {
 /* Estilo geral */
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #d3d3d3, #54c078); /* Gradiente cinza e azul */
+  background: linear-gradient(135deg, #d3d3d3, #54c078); /* Gradiente cinza e verde */
   color: #ffffff;
   min-height: 100vh;
   display: flex;
