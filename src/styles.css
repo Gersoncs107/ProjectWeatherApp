@@ -99,6 +99,10 @@ form button:hover {
   max-width: 400px;
 }
 
+#weather-container.hidden {
+  opacity: 0; /* Torna o contêiner invisível antes de atualizar */
+}
+
 #weather-container h2 {
   font-size: 2rem;
   margin-bottom: 15px;
