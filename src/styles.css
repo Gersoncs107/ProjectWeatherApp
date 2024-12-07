@@ -104,6 +104,10 @@ form button:hover {
   opacity: 0; /* Torna o contêiner invisível antes de atualizar */
 }
 
+#weather-container.visible {
+  opacity: 1; /* Exibe o contêiner novamente após a atualização */
+}
+
 #weather-container h2 {
   font-size: 2rem;
   margin-bottom: 15px;
