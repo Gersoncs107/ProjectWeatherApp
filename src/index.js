@@ -1,4 +1,5 @@
 import './styles.css'
+import { fetchWeatherData, fetchGif} from "./apiUtils"
 // Seleção de elementos do DOM
 const form = document.getElementById('weather-form');
 const loadingIndicator = document.getElementById('loading');
