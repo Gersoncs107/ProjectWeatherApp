@@ -23,8 +23,8 @@ async function fetchWeatherData(location, unit) {
 async function fetchGif(condition) {
     const apiKey = 'sw8RIujQ6WWHFZCMZ5NZ82Kk5vutbEzn'; // Substitua pela sua chave da Giphy API
     const query = condition.split(' ')[0]; // Usa a primeira palavra da condição como termo de busca
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=1`;
-
+    const url = `https://cors-anywhere.herokuapp.com/https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=1`;
+    // const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=1`;
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Failed to fetch GIF: ${response.statusText}`);
